@@ -1,0 +1,30 @@
+2026-01-13 11:55:20: {"level":30,"time":1768280120427,"pid":9200,"hostname":"DESKTOP-H3D9N79","msg":"Server listening at http://127.0.0.1:3000"}
+2026-01-13 11:55:20: 🚀 API running at http://localhost:3000
+2026-01-13 11:55:20: 📘 Swagger UI at http://localhost:3000/docs
+2026-01-13 11:55:20: {"level":30,"time":1768280120428,"pid":9200,"hostname":"DESKTOP-H3D9N79","msg":"Server listening at http://192.168.1.62:3000"}
+2026-01-13 11:55:43: {"level":30,"time":1768280143609,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-1","req":{"method":"GET","url":"/api/trd","host":"192.168.1.62:3000","remoteAddress":"192.168.1.62","remotePort":63456},"msg":"incoming request"}
+2026-01-13 11:55:43: {"level":30,"time":1768280143642,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-1","res":{"statusCode":200},"responseTime":32.88590000011027,"msg":"request completed"}
+2026-01-13 11:55:45: {"level":30,"time":1768280145093,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-2","req":{"method":"GET","url":"/api/sts","host":"192.168.1.62:3000","remoteAddress":"192.168.1.62","remotePort":63456},"msg":"incoming request"}
+2026-01-13 11:55:45: {"level":30,"time":1768280145097,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-2","res":{"statusCode":200},"responseTime":2.9493000004440546,"msg":"request completed"}
+2026-01-13 11:55:47: {"level":30,"time":1768280147946,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-3","req":{"method":"GET","url":"/docs","host":"192.168.1.62:3000","remoteAddress":"192.168.1.62","remotePort":63456},"msg":"incoming request"}
+2026-01-13 11:55:47: {"level":30,"time":1768280147947,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-3","res":{"statusCode":200},"responseTime":1.0514000002294779,"msg":"request completed"}
+2026-01-13 11:55:47: {"level":30,"time":1768280147975,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-4","req":{"method":"GET","url":"/docs/static/swagger-ui.css","host":"192.168.1.62:3000","remoteAddress":"192.168.1.62","remotePort":63456},"msg":"incoming request"}
+2026-01-13 11:55:47: {"level":30,"time":1768280147981,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-4","res":{"statusCode":304},"responseTime":5.827800000086427,"msg":"request completed"}
+2026-01-13 11:55:47: {"level":30,"time":1768280147982,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-5","req":{"method":"GET","url":"/docs/static/index.css","host":"192.168.1.62:3000","remoteAddress":"192.168.1.62","remotePort":56156},"msg":"incoming request"}
+2026-01-13 11:55:47: {"level":30,"time":1768280147984,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-6","req":{"method":"GET","url":"/docs/static/swagger-ui-bundle.js","host":"192.168.1.62:3000","remoteAddress":"192.168.1.62","remotePort":53951},"msg":"incoming request"}
+2026-01-13 11:55:47: {"level":30,"time":1768280147984,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-7","req":{"method":"GET","url":"/docs/static/swagger-ui-standalone-preset.js","host":"192.168.1.62:3000","remoteAddress":"192.168.1.62","remotePort":58744},"msg":"incoming request"}
+2026-01-13 11:55:47: {"level":30,"time":1768280147985,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-8","req":{"method":"GET","url":"/docs/static/swagger-initializer.js","host":"192.168.1.62:3000","remoteAddress":"192.168.1.62","remotePort":57858},"msg":"incoming request"}
+2026-01-13 11:55:47: {"level":30,"time":1768280147986,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-8","res":{"statusCode":200},"responseTime":0.7258000001311302,"msg":"request completed"}
+2026-01-13 11:55:47: {"level":30,"time":1768280147987,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-5","res":{"statusCode":304},"responseTime":4.659400001168251,"msg":"request completed"}
+2026-01-13 11:55:47: {"level":30,"time":1768280147988,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-6","res":{"statusCode":304},"responseTime":4.357400000095367,"msg":"request completed"}
+2026-01-13 11:55:47: {"level":30,"time":1768280147990,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-7","res":{"statusCode":304},"responseTime":5.114700000733137,"msg":"request completed"}
+2026-01-13 11:55:48: {"level":30,"time":1768280148266,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-9","req":{"method":"GET","url":"/docs/json","host":"192.168.1.62:3000","remoteAddress":"192.168.1.62","remotePort":58744},"msg":"incoming request"}
+2026-01-13 11:55:48: {"level":30,"time":1768280148275,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-9","res":{"statusCode":200},"responseTime":8.506599999964237,"msg":"request completed"}
+2026-01-13 11:55:48: {"level":30,"time":1768280148281,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-a","req":{"method":"GET","url":"/docs/static/favicon-32x32.png","host":"192.168.1.62:3000","remoteAddress":"192.168.1.62","remotePort":58744},"msg":"incoming request"}
+2026-01-13 11:55:48: {"level":30,"time":1768280148283,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-a","res":{"statusCode":304},"responseTime":1.5225999988615513,"msg":"request completed"}
+2026-01-13 11:55:48: {"level":30,"time":1768280148341,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-b","req":{"method":"GET","url":"/docs/static/favicon-16x16.png","host":"192.168.1.62:3000","remoteAddress":"192.168.1.62","remotePort":58744},"msg":"incoming request"}
+2026-01-13 11:55:48: {"level":30,"time":1768280148342,"pid":9200,"hostname":"DESKTOP-H3D9N79","reqId":"req-b","res":{"statusCode":304},"responseTime":1.1270000003278255,"msg":"request completed"}
+2026-01-13 11:58:00: {"level":30,"time":1768280280831,"pid":18792,"hostname":"DESKTOP-H3D9N79","msg":"Server listening at http://127.0.0.1:3000"}
+2026-01-13 11:58:00: 🚀 API running at http://localhost:3000
+2026-01-13 11:58:00: 📘 Swagger UI at http://localhost:3000/docs
+2026-01-13 11:58:00: {"level":30,"time":1768280280831,"pid":18792,"hostname":"DESKTOP-H3D9N79","msg":"Server listening at http://192.168.1.62:3000"}
