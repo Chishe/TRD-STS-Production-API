@@ -6,3 +6,7 @@
 2026-01-13 11:58:00: Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
 2026-01-13 11:58:00: To eliminate this warning, add "type": "module" to C:\Users\HOME\Documents\backned\package.json.
 2026-01-13 11:58:00: (Use `node --trace-warnings ...` to show where the warning was created)
+2026-01-13 12:02:04: (node:19464) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/HOME/Documents/backned/index.js is not specified and it doesn't parse as CommonJS.
+2026-01-13 12:02:04: Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+2026-01-13 12:02:04: To eliminate this warning, add "type": "module" to C:\Users\HOME\Documents\backned\package.json.
+2026-01-13 12:02:04: (Use `node --trace-warnings ...` to show where the warning was created)

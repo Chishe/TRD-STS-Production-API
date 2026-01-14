@@ -28,3 +28,11 @@
 2026-01-13 11:58:00: 🚀 API running at http://localhost:3000
 2026-01-13 11:58:00: 📘 Swagger UI at http://localhost:3000/docs
 2026-01-13 11:58:00: {"level":30,"time":1768280280831,"pid":18792,"hostname":"DESKTOP-H3D9N79","msg":"Server listening at http://192.168.1.62:3000"}
+2026-01-13 12:02:04: {"level":30,"time":1768280524908,"pid":19464,"hostname":"DESKTOP-H3D9N79","msg":"Server listening at http://127.0.0.1:3000"}
+2026-01-13 12:02:04: 🚀 API running at http://localhost:3000
+2026-01-13 12:02:04: 📘 Swagger UI at http://localhost:3000/docs
+2026-01-13 12:02:04: {"level":30,"time":1768280524909,"pid":19464,"hostname":"DESKTOP-H3D9N79","msg":"Server listening at http://192.168.1.62:3000"}
+2026-01-13 12:02:06: {"level":30,"time":1768280526042,"pid":19464,"hostname":"DESKTOP-H3D9N79","reqId":"req-1","req":{"method":"GET","url":"/api/sts","host":"192.168.1.62:3000","remoteAddress":"192.168.1.62","remotePort":51299},"msg":"incoming request"}
+2026-01-13 12:02:06: {"level":30,"time":1768280526057,"pid":19464,"hostname":"DESKTOP-H3D9N79","reqId":"req-1","res":{"statusCode":200},"responseTime":14.343900000676513,"msg":"request completed"}
+2026-01-13 12:02:06: {"level":30,"time":1768280526763,"pid":19464,"hostname":"DESKTOP-H3D9N79","reqId":"req-2","req":{"method":"GET","url":"/api/sts","host":"192.168.1.62:3000","remoteAddress":"192.168.1.62","remotePort":51307},"msg":"incoming request"}
+2026-01-13 12:02:06: {"level":30,"time":1768280526770,"pid":19464,"hostname":"DESKTOP-H3D9N79","reqId":"req-2","res":{"statusCode":200},"responseTime":6.773499999195337,"msg":"request completed"}
