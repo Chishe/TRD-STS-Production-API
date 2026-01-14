@@ -1,5 +1,6 @@
 npm init -y
 npm install fastify
+npm install pg
 npm install csv-parser
 npm install @fastify/swagger @fastify/swagger-ui
 npm install pm2 -g
