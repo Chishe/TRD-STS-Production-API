@@ -150,3 +150,21 @@
 2026-01-14 10:07:00: {"level":30,"time":1768360020548,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-12","res":{"statusCode":304},"responseTime":1.034200000576675,"msg":"request completed"}
 2026-01-14 10:07:24: {"level":30,"time":1768360044524,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-13","req":{"method":"GET","url":"/api/trd","host":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":57609},"msg":"incoming request"}
 2026-01-14 10:07:24: {"level":30,"time":1768360044603,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-13","res":{"statusCode":200},"responseTime":78.57679999992251,"msg":"request completed"}
+2026-01-14 11:12:10: {"level":30,"time":1768363930147,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-14","req":{"method":"GET","url":"/","host":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":65500},"msg":"incoming request"}
+2026-01-14 11:12:10: {"level":30,"time":1768363930147,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-14","msg":"Route GET:/ not found"}
+2026-01-14 11:12:10: {"level":30,"time":1768363930149,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-14","res":{"statusCode":404},"responseTime":1.8582000005990267,"msg":"request completed"}
+2026-01-14 11:12:43: {"level":30,"time":1768363963784,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-15","req":{"method":"GET","url":"/","host":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":65500},"msg":"incoming request"}
+2026-01-14 11:12:43: {"level":30,"time":1768363963784,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-15","msg":"Route GET:/ not found"}
+2026-01-14 11:12:43: {"level":30,"time":1768363963785,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-15","res":{"statusCode":404},"responseTime":0.6101999990642071,"msg":"request completed"}
+2026-01-14 11:12:52: {"level":30,"time":1768363972921,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-16","req":{"method":"GET","url":"/","host":"127.0.0.1:3000","remoteAddress":"127.0.0.1","remotePort":61479},"msg":"incoming request"}
+2026-01-14 11:12:52: {"level":30,"time":1768363972921,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-16","msg":"Route GET:/ not found"}
+2026-01-14 11:12:52: {"level":30,"time":1768363972921,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-16","res":{"statusCode":404},"responseTime":0.4791000001132488,"msg":"request completed"}
+2026-01-14 11:12:53: {"level":30,"time":1768363973115,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-17","req":{"method":"GET","url":"/favicon.ico","host":"127.0.0.1:3000","remoteAddress":"127.0.0.1","remotePort":61479},"msg":"incoming request"}
+2026-01-14 11:12:53: {"level":30,"time":1768363973115,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-17","msg":"Route GET:/favicon.ico not found"}
+2026-01-14 11:12:53: {"level":30,"time":1768363973115,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-17","res":{"statusCode":404},"responseTime":0.5324000008404255,"msg":"request completed"}
+2026-01-14 11:14:46: {"level":30,"time":1768364086837,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-18","req":{"method":"GET","url":"/","host":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":65450},"msg":"incoming request"}
+2026-01-14 11:14:46: {"level":30,"time":1768364086837,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-18","msg":"Route GET:/ not found"}
+2026-01-14 11:14:46: {"level":30,"time":1768364086837,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-18","res":{"statusCode":404},"responseTime":0.37250000052154064,"msg":"request completed"}
+2026-01-14 11:15:23: {"level":30,"time":1768364123799,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-19","req":{"method":"GET","url":"/","host":"localhost:3000","remoteAddress":"127.0.0.1","remotePort":65450},"msg":"incoming request"}
+2026-01-14 11:15:23: {"level":30,"time":1768364123799,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-19","msg":"Route GET:/ not found"}
+2026-01-14 11:15:23: {"level":30,"time":1768364123799,"pid":17540,"hostname":"DESKTOP-H3D9N79","reqId":"req-19","res":{"statusCode":404},"responseTime":0.5004999991506338,"msg":"request completed"}

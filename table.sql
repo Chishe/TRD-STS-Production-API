@@ -21,3 +21,5 @@ CREATE TABLE sts_status (
   created_at TIMESTAMP DEFAULT NOW(),
   UNIQUE(timestamp)
 );
+
+

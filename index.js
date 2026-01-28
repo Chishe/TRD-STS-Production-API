@@ -1,3 +1,6 @@
+import "dotenv/config";
+import readline from "readline";
+import bcrypt from "bcrypt";
 import Fastify from "fastify";
 import fs from "fs";
 import path from "path";
@@ -7,11 +10,105 @@ import swagger from "@fastify/swagger";
 import swaggerUI from "@fastify/swagger-ui";
 import { pool } from "./db.js";
 
+const { APP_USER, APP_PASS_HASH, PORT = 3000 } = process.env;
+
+
+if (!APP_USER || !APP_PASS_HASH) {
+  console.log("\x1b[31m%s\x1b[0m", "❌ Missing APP_USER or APP_PASS_HASH in .env");
+  process.exit(1);
+}
+
+
+const MAX_ATTEMPTS = 3;
+let attempts = 0;
+
 const fastify = Fastify({ logger: true });
 
-/* ======================================================
-   SWAGGER
-====================================================== */
+
+function askPassword(query) {
+  return new Promise((resolve) => {
+    const stdin = process.stdin;
+    const stdout = process.stdout;
+    let password = "";
+
+    stdout.write(query);
+
+    stdin.setRawMode(true);
+    stdin.resume();
+    stdin.setEncoding("utf8");
+
+    const onData = (char) => {
+      char = char.toString();
+
+      if (char === "\r" || char === "\n") {
+        stdout.write("\n");
+        stdin.setRawMode(false);
+        stdin.pause();
+        stdin.removeListener("data", onData);
+        resolve(password);
+        return;
+      }
+
+      if (char === "\u0003") process.exit();
+
+      if (char === "\u007f") {
+        if (password.length > 0) {
+          password = password.slice(0, -1);
+          stdout.write("\b \b");
+        }
+        return;
+      }
+
+      password += char;
+      stdout.write("*");
+    };
+
+    stdin.on("data", onData);
+  });
+}
+
+const delay = (ms) => new Promise((r) => setTimeout(r, ms));
+
+
+async function login() {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  return new Promise((resolve) => {
+    rl.question("Username: ", async (username) => {
+      rl.close();
+
+      const password = await askPassword("Password: ");
+      const userOk = username === APP_USER;
+      const passOk = await bcrypt.compare(password, APP_PASS_HASH);
+
+      if (userOk && passOk) {
+        console.log("\x1b[32m%s\x1b[0m", "✅ Login success\n");
+        resolve(true);
+      } else {
+        attempts++;
+        console.log(
+          "\x1b[31m%s\x1b[0m",
+          `❌ Login failed (${attempts}/${MAX_ATTEMPTS})`
+        );
+
+        if (attempts >= MAX_ATTEMPTS) {
+          console.log("🚫 Too many failed attempts. Exit.");
+          process.exit(1);
+        }
+
+        const wait = attempts * 2000;
+        console.log(`⏱ Wait ${wait / 1000}s...\n`);
+        await delay(wait);
+        resolve(await login());
+      }
+    });
+  });
+}
+
+
 await fastify.register(swagger, {
   openapi: {
     info: {
@@ -25,9 +122,6 @@ await fastify.register(swaggerUI, {
   routePrefix: "/docs",
 });
 
-/* ======================================================
-   UTILS
-====================================================== */
 function readLastRowCSV(filePath) {
   return new Promise((resolve, reject) => {
     let lastRow = null;
@@ -52,9 +146,7 @@ function getCurrentInfo() {
   };
 }
 
-/* ======================================================
-   API : TRD
-====================================================== */
+
 fastify.get("/api/trd", async () => {
   const { year, month, day } = getCurrentInfo();
   const filename = `Trd${year}${month}${day}.csv`;
@@ -68,13 +160,13 @@ fastify.get("/api/trd", async () => {
 
   const data = {
     file_used: filename,
-    partnumber: row[1],                 // B
-    shot_current_part: Number(row[6]),  // G
-    shot_ok: Number(row[7]),            // H
-    shot_ng: Number(row[8]),            // I
-    shot_total: Number(row[9]),         // J
-    ct: Number(row[10]),                // K
-    timestamp: row[38],                 // AM
+    partnumber: row[1],
+    shot_current_part: Number(row[6]),
+    shot_ok: Number(row[7]),
+    shot_ng: Number(row[8]),
+    shot_total: Number(row[9]),
+    ct: Number(row[10]),
+    timestamp: row[38],
   };
 
   await pool.query(
@@ -84,24 +176,13 @@ fastify.get("/api/trd", async () => {
     VALUES ($1,$2,$3,$4,$5,$6,$7,$8)
     ON CONFLICT (timestamp) DO NOTHING
     `,
-    [
-      data.partnumber,
-      data.shot_current_part,
-      data.shot_ok,
-      data.shot_ng,
-      data.shot_total,
-      data.ct,
-      data.timestamp,
-      data.file_used,
-    ]
+    Object.values(data)
   );
 
   return data;
 });
 
-/* ======================================================
-   API : STS
-====================================================== */
+
 fastify.get("/api/sts", async () => {
   const { year, month } = getCurrentInfo();
   const filename = `Sts${year}${month}.csv`;
@@ -114,10 +195,10 @@ fastify.get("/api/sts", async () => {
   const row = await readLastRowCSV(filePath);
 
   const data = {
+    timestamp: row[1],
+    status: Number(row[2]),
+    partnumber: row[3],
     file_used: filename,
-    timestamp: row[1],      //B
-    status: Number(row[2]), //C
-    partnumber: row[3],     //D
   };
 
   await pool.query(
@@ -127,19 +208,17 @@ fastify.get("/api/sts", async () => {
     VALUES ($1,$2,$3,$4)
     ON CONFLICT (timestamp) DO NOTHING
     `,
-    [data.timestamp, data.status, data.partnumber, data.file_used]
+    Object.values(data)
   );
 
   return data;
 });
 
-/* ======================================================
-   START SERVER
-====================================================== */
-const start = async () => {
-  await fastify.listen({ port: 3000, host: "0.0.0.0" });
-  console.log("🚀 http://localhost:3000");
-  console.log("📘 http://localhost:3000/docs");
-};
+console.log("\x1b[36m%s\x1b[0m", "🔐 Secure Login Required");
+console.log(`❗ Max attempts: ${MAX_ATTEMPTS}\n`);
 
-start();
+await login();
+
+await fastify.listen({ port: PORT, host: "0.0.0.0" });
+console.log("🚀 http://localhost:" + PORT);
+console.log("📘 http://localhost:" + PORT + "/docs");

@@ -2,5 +2,9 @@ npm init -y
 npm install fastify
 npm install pg
 npm install csv-parser
+npm install dotenv
+npm install readline
+npm install bcrypt
 npm install @fastify/swagger @fastify/swagger-ui
 npm install pm2 -g
+
